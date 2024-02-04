@@ -61,6 +61,16 @@ class apnaList:
                 return i
             
         return 'ValueError - Not in list'
+    
+    def insert(self,pos,item):
+        if self.n == self.size:
+            self.__resize(self.size*2)
+
+        for i in range(self.n,pos,-1):
+            self.A[i] = self.A[i-1]
+
+        self.A[pos] = item
+        self.n = self.n + 1
 
     def __make__array(self,capacity):
         # this code is a ctype array(static, referential) with size capacity
@@ -72,4 +82,6 @@ L.append(True)
 L.append(1008) 
 L.append(4.6) 
 
-print(L.find(1008)) 
+print(L) 
+L.insert(1,'world')
+print(L)
