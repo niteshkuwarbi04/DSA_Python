@@ -72,6 +72,23 @@ class apnaList:
         self.A[pos] = item
         self.n = self.n + 1
 
+    def __delitem__(self,pos):
+        # delete
+        if 0<= pos < self.n:
+            for i in range(pos,self.n-1):
+                self.A[i] = self.A[i+1]
+            
+            self.n = self.n - 1
+
+    def remove(self,item):
+        pos = self.find(item)
+
+        if type(pos) == int:
+            # delete
+            self.__delitem__(pos)
+        else :
+            return pos
+
     def __make__array(self,capacity):
         # this code is a ctype array(static, referential) with size capacity
         return (capacity*ctypes.py_object)() 
@@ -82,6 +99,6 @@ L.append(True)
 L.append(1008) 
 L.append(4.6) 
 
-print(L) 
-L.insert(1,'world')
+print(L)
+L.remove('hello')
 print(L)
