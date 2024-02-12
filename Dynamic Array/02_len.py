@@ -9,7 +9,7 @@ class apnaList:
         self.A = self.__make__array(self.size)
 
     def len(self):
-        return self.n
+        return self.n       # returns the length of array i.e., number of item (n)
     
     def __make__array(self,capacity):
         # this code is a ctype array(static, referential) with size capacity

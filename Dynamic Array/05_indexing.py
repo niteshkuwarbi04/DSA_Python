@@ -30,9 +30,31 @@ class apnaList:
         # reassign A
         self.A = B
 
+    def __str__(self):
+        # [1,2,3]
+        result = ''
+        for i in range(self.n):
+            result = result + str(self.A[i]) + ','
+        
+        return '[' +  result[:-1] + ']'
+    
+    
+    def __getitem__(self,index):
+        if 0 <= index < self.n:     # if index is between 0 and nth
+            return self.A[index]
+        else:
+            return 'IndexError - Index out of range'
+
     def __make__array(self,capacity):
         # this code is a ctype array(static, referential) with size capacity
         return (capacity*ctypes.py_object)() 
 
 L = apnaList()
-print(L.len())
+L.append('hello')
+L.append(True)
+L.append(1008) 
+L.append(4.6) 
+
+print(L[0])
+print(L[2])
+print(L[4])
