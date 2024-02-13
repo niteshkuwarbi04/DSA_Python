@@ -18,8 +18,8 @@ class LinkedList:
         new_node.next = self.head   # creating connection
         self.head = new_node        # reassign head
 
-        self.n = self.n + 1         # increment n
-
+        self.n = self.n + 1         # incrementing n
+        
 L = LinkedList()
 L.insert_head(1)
 L.insert_head(2)

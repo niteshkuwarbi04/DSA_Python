@@ -1,3 +1,4 @@
+
 class Node:
     def __init__(self, value):
         self.data = value
@@ -30,6 +31,39 @@ class LinkedList:
             current = current.next
         
         return result[:-3]      # slicing to avoid last ' -> '
+    
+    def append(self, value):
+
+        new_node = Node(value)
+
+        if self.head == None:       # if list is empty
+            self.head = new_node
+            self.n = self.n + 1
+            return
+
+        current = self.head
+
+        while current.next!=None:
+            current = current.next
+        
+        # you are now at the lastnode
+        current.next = new_node
+        self.n = self.n + 1
+
+    def insert_after(self,after,value):
+
+        new_node = Node(value)
+
+        current = self.head
+        while current!= None:
+            if current.data == after:
+                break
+            current = current.next
+            
+        new_node.next = current.next
+        current.next = new_node
+
+        self.n = self.n + 1
 
 L = LinkedList()
 L.insert_head(1) 
@@ -37,4 +71,6 @@ L.insert_head(2)
 L.insert_head(3)
 L.insert_head(4)
 
+L.insert_after(2,10)
 print(L.traverse())
+

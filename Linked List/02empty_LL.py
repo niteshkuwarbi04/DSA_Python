@@ -1,3 +1,8 @@
+class Node:
+    def __init__(self, value):
+        self.data = value
+        self.next = None
+
 class LinkedList:
     def __init__(self):
 
@@ -6,4 +11,4 @@ class LinkedList:
         self.n = 0      # n = Number of nodes in linked list
 
 L = LinkedList()
-print(L)
+print(L) 

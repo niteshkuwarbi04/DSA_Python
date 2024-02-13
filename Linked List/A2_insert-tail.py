@@ -26,7 +26,7 @@ class LinkedList:
         self.n = self.n + 1         # increment n
 
     # Traverse
-    def __str__(self):
+    def traverse(self):
         current = self.head     # current = complete node(add+data)
         result = ''
 
