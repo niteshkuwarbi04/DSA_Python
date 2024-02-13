@@ -48,37 +48,8 @@ class apnaList:
         if self.n == 0:
             return 'Empty List'
 
-        print(self.A[self.n-1])
-        self.n = self.n - 1
-
-    def clear(self):
-        self.n = 0
-        self.size = 1
-
-    def find(self,item):
-        for i in range(self.n):
-            if self.A[i] == item:
-                return i
-            
-        return 'ValueError - Not in list'
-    
-    def insert(self,pos,item):
-        if self.n == self.size:
-            self.__resize(self.size*2)
-
-        for i in range(self.n,pos,-1):
-            self.A[i] = self.A[i-1]
-
-        self.A[pos] = item
-        self.n = self.n + 1
-
-    def __delitem__(self,pos):
-        # delete
-        if 0<= pos < self.n:
-            for i in range(pos,self.n-1):
-                self.A[i] = self.A[i+1]
-            
-            self.n = self.n - 1
+        print(self.A[self.n-1])     # will print the item that is to be popped i.e., last item
+        self.n = self.n - 1 
 
     def __make__array(self,capacity):
         # this code is a ctype array(static, referential) with size capacity
@@ -90,6 +61,5 @@ L.append(True)
 L.append(1008) 
 L.append(4.6) 
 
-print(L)
-del L[3]
+L.pop()
 print(L)

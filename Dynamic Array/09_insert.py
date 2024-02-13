@@ -51,6 +51,27 @@ class apnaList:
         print(self.A[self.n-1])
         self.n = self.n - 1
 
+    def clear(self):
+        self.n = 0
+        self.size = 1
+
+    def find(self,item):
+        for i in range(self.n):
+            if self.A[i] == item:
+                return i
+            
+        return 'ValueError - Not in list'
+    
+    def insert(self,pos,item):
+        if self.n == self.size:
+            self.__resize(self.size*2)
+
+        for i in range(self.n,pos,-1):      # reverse loop
+            self.A[i] = self.A[i-1]
+
+        self.A[pos] = item
+        self.n = self.n + 1
+
     def __make__array(self,capacity):
         # this code is a ctype array(static, referential) with size capacity
         return (capacity*ctypes.py_object)() 
@@ -61,5 +82,6 @@ L.append(True)
 L.append(1008) 
 L.append(4.6) 
 
-L.pop()
+print(L) 
+L.insert(1,'world')
 print(L)

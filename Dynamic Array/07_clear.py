@@ -51,9 +51,9 @@ class apnaList:
         print(self.A[self.n-1])
         self.n = self.n - 1
 
-    def clear(self):
-        self.n = 0
-        self.size = 1
+    def clear(self): 
+        self.n = 0      # here the total number of item will be 0
+        self.size = 1       # also size will be initialize to 1
 
     def __make__array(self,capacity):
         # this code is a ctype array(static, referential) with size capacity
