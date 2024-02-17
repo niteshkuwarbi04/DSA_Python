@@ -69,12 +69,17 @@ class LinkedList:
         else:
             return 'Item not found'
 
+    def clear(self):
+        self.head = None
+        self.n = 0
+
 L = LinkedList()
+
 L.insert_head(1) 
 L.insert_head(2)
 L.insert_head(3)
 L.insert_head(4)
 
-L.insert_after(2,10)
 print(L.traverse())
-
+L.clear()
+print(L.traverse())
