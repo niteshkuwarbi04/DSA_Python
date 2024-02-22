@@ -62,6 +62,7 @@ class LinkedList:
                 break
             current = current.next
 
+        # main logic for inserting 
         if current != None:  
             new_node.next = current.next
             current.next = new_node
